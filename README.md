@@ -32,4 +32,4 @@ Using Gcc
 
 > gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test
 
-In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_.
+In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_. Run using ./cipher_test
