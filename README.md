@@ -12,13 +12,15 @@ f (p) = (p + x)mod26
 
 x is the amount of shifting through the alphabet to encode the original text (the plaintext) into a hidden message (the ciphertext). For example if i x = 1 then
 
-a = b,
-b = c,
-...,
-z=a
+> a = b,
+> > b = c,
+> ...,
+> z=a
 
 Decryption occurs through:
-f −1 (p) = (p − k)mod26
+
+f(to the power of -1)(p) = (p − k) mod 26
+
 This may have been good on the battlefield, or as a child sharing the location of your toy cars, but it is fairly (very?!) easy to break.
 
 The Vigenere cipher was created to make this a bit more difficult by creating a two-dimensional matrix of letters
