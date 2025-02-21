@@ -26,3 +26,8 @@ This may have been good on the battlefield, or as a child sharing the location o
 The Vigenere cipher was created to make this a bit more difficult by creating a two-dimensional matrix of letters
 
 [Vigenere Cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
+
+## Compilation
+Using Gcc 
+> gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test
+In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_.
