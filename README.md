@@ -6,19 +6,19 @@
 - GCC (compiled using: gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test)
 
 ## Brief
-This project allowed me to learn about creating a secret key called the Vigenere cipher. It is a development on the
-well-known Caesar cipher.
-Using the Caesar cipher each letter is shifted (encrypted) according to:
+This project allowed me to learn about creating a secret key called the Vigenere cipher. It is a development on the well-known Caesar cipher.Using the Caesar cipher each letter is shifted (encrypted) according to:
+
 f (p) = (p + x)mod26
-x is the amount of shifting through the alphabet to encode the original text (the plaintext) into a hidden message
-(the ciphertext). For example if i x = 1 then
+
+x is the amount of shifting through the alphabet to encode the original text (the plaintext) into a hidden message (the ciphertext). For example if i x = 1 then
+
 a = b,
 b = c,
 ...,
 z=a
-.
+
 Decryption occurs through:
 f −1 (p) = (p − k)mod26
-This may have been good on the battlefield, or as a child sharing the location of your toy cars, but it is fairly (very?!)
-easy to break.
+This may have been good on the battlefield, or as a child sharing the location of your toy cars, but it is fairly (very?!) easy to break.
+
 The Vigenere cipher was created to make this a bit more difficult by creating a two-dimensional matrix of letters
