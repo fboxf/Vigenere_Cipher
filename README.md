@@ -13,7 +13,7 @@ f (p) = (p + x)mod26
 x is the amount of shifting through the alphabet to encode the original text (the plaintext) into a hidden message (the ciphertext). For example if i x = 1 then
 
 > a = b,
-> > b = c,
+> b = c,
 > ...,
 > z=a
 
