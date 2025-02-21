@@ -8,7 +8,7 @@
 ## Brief
 This project allowed me to learn about creating a secret key called the Vigenere cipher. It is a development on the well-known Caesar cipher.Using the Caesar cipher each letter is shifted (encrypted) according to:
 
-f (p) = (p + x)mod26
+> f (p) = (p + x)mod26
 
 x is the amount of shifting through the alphabet to encode the original text (the plaintext) into a hidden message (the ciphertext). For example if i x = 1 then
 
@@ -19,8 +19,10 @@ x is the amount of shifting through the alphabet to encode the original text (th
 
 Decryption occurs through:
 
-f(to the power of -1)(p) = (p − k) mod 26
+> f(to the power of -1)(p) = (p − k) mod 26
 
 This may have been good on the battlefield, or as a child sharing the location of your toy cars, but it is fairly (very?!) easy to break.
 
 The Vigenere cipher was created to make this a bit more difficult by creating a two-dimensional matrix of letters
+
+[Vigenere Cipher]: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
