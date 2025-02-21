@@ -1,12 +1,11 @@
-*Vigenere Cipher How to Program (Ninth Edition) - Global Edition - Deitel,P and Deitel, H
+# Vigenere Cipher How to Program (Ninth Edition) - Global Edition - Deitel,P and Deitel, H
+# Chapter 8: Characters and Strings Project 8.41 Programming Project: Pqyoaf Nylfomigrob Qwbbfmh Mndogvk: Rboqlrut yua Boklnxhmywex
 
-**Chapter 8: Characters and Strings Project 8.41 Programming Project: Pqyoaf Nylfomigrob Qwbbfmh Mndogvk: Rboqlrut yua Boklnxhmywex
-
-** Programming Tools
+## Programming Tools
 - VIM
 - GCC (compiled using: gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test)
 
-** Brief
+## Brief
 This project allowed me to learn about creating a secret key called the Vigenere cipher. It is a development on the
 well-known Caesar cipher.
 Using the Caesar cipher each letter is shifted (encrypted) according to:
