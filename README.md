@@ -32,8 +32,8 @@ Using Gcc, download the files into a folder and type the following:
 
 > gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test -lncurses
 
-In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_. Run using executable ./cipher_test
+In cipher_test.c there are two macro definitions ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_. Run using executable ./cipher_test
 
-ALternatively, run enclosed Makefile:
+ALternatively, run the enclosed Makefile:
 
 > make 
