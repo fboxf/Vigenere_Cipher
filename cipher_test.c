@@ -1,10 +1,10 @@
 /*! \file cipher_test.c */
 #include <stdio.h>
+#include <ncurses.h>
 #include "cipher.h"
 
-//#define ENCRYPT
-#define DECRYPT
-
+#define ENCRYPT
+//define DECRYPT
 //#define DEBUG
 
 int main(void){
@@ -12,27 +12,49 @@ int main(void){
 	char secretKey[MAX_KEY_LENGTH];
 	char cipherText[MAX_SENTENCE_LENGTH]; 
 
-	puts("Vigenere Cipher Project");
-	puts("");
+	char title[] = "Vigenere Cipher Project";
+	char encrypt_request[] = "Enter a sentence to encrypt - Maximum ";
+	char decrypt_request[] = "Enter a sentence to decrypt - Maximum ";
+	char secret_key_request[] = "Enter a secret key - Maximum ";
+
+	initscr();
+
+	addstr(title);
+
+	move(2,0);
 
 #ifdef ENCRYPT
-	puts("Enter a sentence to encrypt: ");
-	fgets(plainText, MAX_SENTENCE_LENGTH, stdin);
-	puts("Enter a secret key of ONLY LETTERS (max 20): ");
-	fgets(secretKey, MAX_KEY_LENGTH, stdin);
+	printw("%s %d characters:\n", encrypt_request, MAX_SENTENCE_LENGTH);
+	refresh();
+	getnstr(plainText, MAX_SENTENCE_LENGTH);
+	
+	printw("%s %d characters:\n" , secret_key_request, MAX_KEY_LENGTH);
+	refresh();
+	getnstr(secretKey, MAX_KEY_LENGTH);
 
+	refresh();
 	encrypt(plainText, cipherText, secretKey);  // encrypt
+
+	printw("%s", cipherText);
 #endif
 
 #ifdef DECRYPT
-	puts("Enter a sentence to decrypt: ");
-	fgets(cipherText, MAX_SENTENCE_LENGTH, stdin);
-	puts("Enter a secret key of ONLY LETTERS (max 20): ");
-	fgets(secretKey, MAX_KEY_LENGTH, stdin);
+	printw("%s %d characters:\n ", decrypt_request, MAX_SENTENCE_LENGTH);
+	refresh();
+	getnstr(cipherText, MAX_SENTENCE_LENGTH);
 
+	printw("%s %d characters:\n" , secret_key_request, MAX_KEY_LENGTH);
+	refresh();
+	getnstr(secretKey, MAX_KEY_LENGTH);
+
+	refresh();
 	decrypt(cipherText, plainText, secretKey); // decrypt 
 
+	printw("%s", plainText);
 #endif
+
+	getch();
+	endwin(); 
 
 	return 0;
 }
