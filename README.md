@@ -37,3 +37,6 @@ ALternatively, run the enclosed Makefile:
 > make 
 
 In either case run using executable ./cipher_test
+
+## Use
+The secret key should consist only of letters. Maximum lengths of plainText, cipherText and secretKey defined in cipher.h 
