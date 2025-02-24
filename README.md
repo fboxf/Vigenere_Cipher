@@ -30,6 +30,10 @@ The Vigenere cipher was created to make this a bit more difficult by creating a 
 ## Compilation
 Using Gcc, download the files into a folder and type the following:
 
-> gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test
+> gcc -std=c18 -Wall cipher.c cipher_test.c -o cipher_test -lncurses
 
-In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_. Run using ./cipher_test
+In cipher_test.c there is are two preprocessor directives marked ENCRYPT and DECRYPT. _Simply comment out the appropriate choice and recompile_. Run using executable ./cipher_test
+
+ALternatively, run enclosed Makefile:
+
+> make 
