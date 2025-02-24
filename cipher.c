@@ -3,13 +3,11 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <ncurses.h>
 #include "cipher.h"
 
-// prototypes
 bool checkKey(char *strng);
 char getSubstitution (char scrt_char, char plainOrCipher_char, bool de_Or_en);
-
-// Function definitions
 
 /** \brief Check if string contains only letters of the alphabet.
  *
@@ -20,15 +18,14 @@ char getSubstitution (char scrt_char, char plainOrCipher_char, bool de_Or_en);
 bool checkKey(char *strng){
 	int counter = 0; 
 
-	while (strng[counter] != '\n'){
+	while (strng[counter] != '\0'){
 		if (!isalpha(strng[counter])){
-			puts("Can't be used");
+			printw("Can't be used because it contains %d\n", strng[counter]);
 			return false;
 		}
 		counter++;
 	}
 	return true;
-
 }
 
 /** \brief Substitute one character with another. 
@@ -49,7 +46,6 @@ char getSubstitution (char scrt_char, char plainOrCipher_char, bool Encrypt){
 		'U','V','W','X','Y','Z'};
 	
 	static char Vigenere_Square[ALPHABET_LENGTH][ALPHABET_LENGTH] = {{' '}};
-
 
 	if ((Vigenere_Square[0][0]) == ' '){ // call first time only
 		for (size_t i = 0; i < ALPHABET_LENGTH; i++) {
@@ -102,6 +98,7 @@ char getSubstitution (char scrt_char, char plainOrCipher_char, bool Encrypt){
 int encrypt (char *plainToEncrypt, char *cipherTextArray, char *scrt_strng){
 	int p_counter = 0, s_counter = 0;
 
+
 	if(!checkKey(scrt_strng)){
 		return EXIT_FAILURE;
 	}
@@ -125,11 +122,6 @@ int encrypt (char *plainToEncrypt, char *cipherTextArray, char *scrt_strng){
 	}
 	
 	p_counter = 0;
-
-	while (cipherTextArray[p_counter] != '\0'){
-		printf("%c", cipherTextArray[p_counter]);
-		p_counter++;
-	}
 
 	return EXIT_SUCCESS;
 }
@@ -164,11 +156,6 @@ int decrypt (char *cipherToDecrypt, char *plainTextArray, char *scrt_strng){
 	}
 	
 	p_counter = 0;
-
-	while (plainTextArray[p_counter] != '\0'){
-		printf("%c", plainTextArray[p_counter]);
-		p_counter++;
-	}
 
 	return EXIT_SUCCESS;
 }
